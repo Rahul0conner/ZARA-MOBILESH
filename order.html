@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Shop - Order Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Your Mobile</h1>
+        <form id="orderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="model">Select Mobile Model:</label>
+            <select id="model" name="model" required>
+                <option value="">--Choose a model--</option>
+                <option value="iphone 13 pro max">iPhone 13 pro max</option>
+                <option value="samsung s22">Samsung Galaxy S22 ultra</option>
+                <option value="oneplus 10">oneplus 10</option>
+                <option value="iphone 16">iphone 16</option>
+                <option value="Samsung s24 ultra">Samsung s24 ultra</option>
+                <option value="oneplus 12">oneplus 12</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+        <div id="orderSummary" class="hidden"></div>
+    </div>
+
+    <script src="script.js">
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const model = document.getElementById('model').value;
+    const quantity = document.getElementById('quantity').value;
+
+    const orderSummary = document.getElementById('orderSummary');
+    orderSummary.classList.remove('hidden');
+    orderSummary.innerHTML = `
+        <h2>Order Summary</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Mobile Model:</strong> ${model}</p>
+        <p><strong>Quantity:</strong> ${quantity}</p>
+    `;
+});
+
+    </script>
+    
+</body>
+<style>
+    .container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#oym{
+    padding: 30px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, .obi {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.obi {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.obi:hover {
+    background-color: gray;
+}
+
+.hidden {
+    display: none;
+}
+
+#orderSummary {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #e7f3fe;
+}
+</style>
+</html>
+

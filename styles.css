@@ -1,0 +1,47 @@
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#oym{
+    padding: 30px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, .obi {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.obi {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.obi:hover {
+    background-color: gray;
+}
+
+.hidden {
+    display: none;
+}
+
+#orderSummary {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #e7f3fe;
+}
